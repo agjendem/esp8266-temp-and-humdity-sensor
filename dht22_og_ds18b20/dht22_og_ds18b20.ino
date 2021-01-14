@@ -122,6 +122,8 @@ void reconnectMqtt() {
       doc["ip"] = current_ip;
       doc["client_id"] = mqtt_clientid;
       doc["mqtt_sensor_topic"] = mqtt_sensor_topic;
+      doc["number_of_temperature_sensors"] = ds18b20_device_count + 1;
+      doc["number_of_humidity_sensors"] = 1;
       
       char data[200];
       serializeJson(doc, data);
