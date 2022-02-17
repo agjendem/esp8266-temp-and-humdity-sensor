@@ -41,8 +41,10 @@ void setupWifi() {
   WiFi.begin(wifi_ssid, wifi_password);
 
   while(WiFi.status() != WL_CONNECTED) {
+    // Explanation for the codes can be found here: https://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html#check-return-codes
+    Serial.printf("WIFI connection status: %d\n", WiFi.status());
+    //Serial.print(".");
     delay(500);
-    Serial.print(".");
   }
   Serial.println();
 
